@@ -33,9 +33,9 @@ public class SteamUserStats extends SteamInterface {
 		super(SteamUserStatsNative.createCallback(new SteamUserStatsCallbackAdapter(callback)));
 	}
 
-	public boolean requestCurrentStats() {
-		return SteamUserStatsNative.requestCurrentStats();
-	}
+//	public boolean requestCurrentStats() {
+//		return SteamUserStatsNative.requestCurrentStats();
+//	}
 
 	public int getStatI(String name, int defaultValue) {
 		int[] values = new int[1];

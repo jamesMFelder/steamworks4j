@@ -9,8 +9,8 @@ public:
 	SteamFriendsCallback(JNIEnv* env, jobject callback);
 	~SteamFriendsCallback();
 
-	void onSetPersonaNameResponse(SetPersonaNameResponse_t* callback, bool error);
-	CCallResult<SteamFriendsCallback, SetPersonaNameResponse_t> onSetPersonaNameResponseCall;
+	//void onSetPersonaNameResponse(SetPersonaNameResponse_t* callback, bool error);
+	//CCallResult<SteamFriendsCallback, SetPersonaNameResponse_t> onSetPersonaNameResponseCall;
 
 	STEAM_CALLBACK(SteamFriendsCallback, onPersonaStateChange, PersonaStateChange_t, m_CallbackPersonaStateChange);
 	STEAM_CALLBACK(SteamFriendsCallback, onGameOverlayActivated, GameOverlayActivated_t, m_CallbackGameOverlayActivated);

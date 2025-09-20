@@ -187,9 +187,9 @@ public class SteamFriends extends SteamInterface {
 		return SteamFriendsNative.getPersonaName();
 	}
 
-	public SteamAPICall setPersonaName(String personaName) {
-		return new SteamAPICall(SteamFriendsNative.setPersonaName(callback, personaName));
-	}
+//	public SteamAPICall setPersonaName(String personaName) {
+//		return new SteamAPICall(SteamFriendsNative.setPersonaName(callback, personaName));
+//	}
 
 	public PersonaState getPersonaState() {
 		return PersonaState.byOrdinal(SteamFriendsNative.getPersonaState());
