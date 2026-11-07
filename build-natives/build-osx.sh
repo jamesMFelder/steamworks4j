@@ -1,18 +1,13 @@
 #!/usr/bin/env bash
 
 build_architecture() {
-    ./premake5 --file=build-osx-$1.lua xcode4
+    ./premake5 --file=build-osx-$1.lua gmake
 
-    xcodebuild -project steamworks4j-$1.xcodeproj -alltargets clean
-    xcodebuild -project steamworks4j-$1.xcodeproj -configuration ReleaseDLL
+    make clean
+    make all
+
     cp bin/ReleaseDLL/libsteamworks4j-$1.dylib ../java-wrapper/src/main/resources/libsteamworks4j-$1.dylib
-
-    xcodebuild -project steamworks4j-$1-server.xcodeproj -alltargets clean
-    xcodebuild -project steamworks4j-$1-server.xcodeproj -configuration ReleaseDLL
     cp bin/ReleaseDLL/libsteamworks4j-$1-server.dylib ../server/src/main/resources/libsteamworks4j-server-$1.dylib
-
-    xcodebuild -project steamworks4j-$1-encryptedappticket.xcodeproj -alltargets clean
-    xcodebuild -project steamworks4j-$1-encryptedappticket.xcodeproj -configuration ReleaseDLL
     cp bin/ReleaseDLL/libsteamworks4j-$1-encryptedappticket.dylib ../server/src/main/resources/libsteamworks4j-encryptedappticket-$1.dylib
 }
 
